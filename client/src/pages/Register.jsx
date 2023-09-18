@@ -1,14 +1,14 @@
-import { useContext } from 'react';
-// import { AuthContext } from '../context/AuthContext';
-
 import { Alert, Button, Form, Row, Col, Stack } from 'react-bootstrap';
+import { AuthContext } from '../context/AuthContext';
+import { useContext } from 'react';
+
 
 const Register = () => {
-   // const { user } = useContext(AuthContext);
-
+   const { registerInfo, updateRegisterInfo, registerUser, registerError, isRegisterLoading } =
+      useContext(AuthContext);
    return (
       <div>
-         <Form>
+         <Form onSubmit={registerUser}>
             <Row
                style={{
                   height: '100vh',
@@ -19,20 +19,41 @@ const Register = () => {
                <Col xs={6}>
                   <Stack gap={3}>
                      <h2>Register</h2>
-                     {/* <h2>{user.name}</h2> */}
 
-                     <Form.Control type="text" placeholder="Name" />
-                     <Form.Control type="text" placeholder="Email" />
+                     <Form.Control
+                        type="text"
+                        placeholder="Name"
+                        onChange={(e) => {
+                           updateRegisterInfo({ ...registerInfo, name: e.target.value });
+                        }}
+                     />
+                     <Form.Control
+                        type="text"
+                        placeholder="Email"
+                        onChange={(e) => {
+                           updateRegisterInfo({ ...registerInfo, email: e.target.value });
+                        }}
+                     />
 
-                     <Form.Control type="text" placeholder="Password" />
-                     <Form.Control type="text" placeholder="Confirm password" />
+                     <Form.Control
+                        type="text"
+                        placeholder="Password"
+                        onChange={(e) => {
+                           updateRegisterInfo({
+                              ...registerInfo,
+                              password: e.target.value,
+                           });
+                        }}
+                     />
 
                      <Button variant="primary" type="submit">
-                        Register
+                        {isRegisterLoading ? 'Creating your account' : 'Register'}
                      </Button>
-                     <Alert variant="danger">
-                        <p>An error occured</p>
-                     </Alert>
+                     {registerError?.error && (
+                        <Alert variant="danger">
+                           <p>{registerError?.message}</p>
+                        </Alert>
+                     )}
                   </Stack>
                </Col>
             </Row>
