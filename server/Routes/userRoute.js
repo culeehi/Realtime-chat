@@ -6,6 +6,8 @@ const router = express.Router();
 router.get('/register', registerUser);
 router.post('/register', registerUser);
 
+router.get('/login', loginUser);
+
 router.post('/login', loginUser);
 router.get('/find/:userId', findUser);
 
