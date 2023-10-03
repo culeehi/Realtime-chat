@@ -26,7 +26,7 @@ export const postRequest = async (url, body) => {
 
 export const getRequest = async (url) => {
    const headers = { 'Content-Type': 'application/json' };
-   
+
    const response = await fetch(url, headers);
 
    const data = await response.json();

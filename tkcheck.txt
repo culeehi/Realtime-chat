@@ -10,7 +10,15 @@
     "name": "chaoo",
     "email": "chaoo@gmail.com",
     "password":"React123&"
+
 }
 
 
-3:37:08
+{
+    "name": "nguyenle",
+    "email": "nguyenle@gmail.com",
+    "password":"React123&"
+\
+}
+
+5:05:08

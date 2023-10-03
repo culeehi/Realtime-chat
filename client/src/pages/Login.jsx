@@ -13,7 +13,7 @@ const Login = () => {
                   height: '100vh',
                   justifyContent: 'center',
                   paddingTop: '10%',
-               }}  
+               }}
             >
                <Col xs={6}>
                   <Stack gap={3}>
@@ -36,7 +36,7 @@ const Login = () => {
                      />
 
                      <Button variant="primary" type="submit">
-                        Register
+                        Login
                      </Button>
                      <Alert variant="danger">
                         <p>An error occured</p>

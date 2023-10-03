@@ -7,7 +7,7 @@ import avata from '../../assets/avatar.png';
 const UserChat = ({ chat, user }) => {
    const { recipientUser } = useFetchRecipientUser({ chat, user });
 
-   console.log(recipientUser);
+   // console.log(recipientUser)
    return (
       <Stack
          direction="horizontal"

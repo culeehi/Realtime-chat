@@ -11,11 +11,9 @@ const Chat = () => {
    const { userChats, isUserChatsLoading, userChatsError } = useContext(ChatContext);
    const { user } = useContext(AuthContext);
 
-   console.log('userChats ' + userChats);
-
    return (
       <Container>
-         <PotentialChtas/>
+         <PotentialChtas />
          {userChats?.length < 1 ? null : (
             <Stack direction="horizontal" gap={4} className="align-items-start">
                <Stack className="flex-grow-0 messages-box pe-3" gap={3}>
